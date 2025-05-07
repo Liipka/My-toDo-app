@@ -1,0 +1,52 @@
+body {
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../images/stoneBackgroung.avif);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContent {
+  height: 90%;
+  width: 70%;
+  background-color: #e9ecf0;
+  border-radius: 2rem;
+  box-shadow: 20px 20px 90px -2px rgba(66, 68, 90, 1);
+  border: 5px solid rgba(36, 43, 235, 0.2);
+}
+
+.listCards {
+  display: flex;
+  overflow: auto hidden;
+  height: 73%;
+  width: 100%;
+
+  @media screen and (max-width: 1000px) {
+    height: 80%;
+  }
+  @media screen and (max-width: 675px) {
+    flex-direction: column;
+    overflow-y: auto;
+    height: 85%;
+  }
+}
+
+.listCards:has(.listCard:nth-child(1):only-child) .listCard {
+  flex: 0 0 60%;
+}
+
+.listCards:has(.listCard:nth-child(2):nth-last-child(1)) .listCard {
+  flex: 0 0 45%;
+}
+
+.listCards:has(.listCard:nth-child(n + 3)) .listCard {
+  flex: 0 0 40%;
+}

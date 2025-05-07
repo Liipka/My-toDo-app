@@ -1,0 +1,83 @@
+.listElement {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex: 1 1;
+}
+.listElement:hover {
+  background-color: #ccdae6;
+  border-radius: 5px;
+}
+
+.task {
+  display: inline-block;
+  flex: 1 1;
+  align-items: center;
+}
+.task:hover {
+  cursor: pointer;
+}
+
+.taskName {
+  vertical-align: super;
+}
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.styledCheckbox {
+  width: 30px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  display: inline-block;
+  margin-right: 0.3rem;
+  transition: 0.2s;
+}
+
+.hiddenCheckbox:checked + .styledCheckbox {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+.hiddenCheckbox:checked + .styledCheckbox::after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin: 3px auto;
+}
+
+.styledCheckbox:hover {
+  border-color: #888;
+}
+
+.deleteTask {
+  height: 1rem;
+  background-color: transparent;
+  border: none;
+  align-self: center;
+  filter: none;
+
+  @media screen and (max-width: 675px) {
+    height: 1.5rem;
+  }
+}
+
+.deleteTaskIcon {
+  filter: none;
+  opacity: 0;
+}
+.deleteTaskIcon:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+.listElement:hover .deleteTaskIcon {
+  opacity: 1;
+}
